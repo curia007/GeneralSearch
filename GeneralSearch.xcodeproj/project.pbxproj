@@ -16,6 +16,9 @@
 		C0DBAC192818A8930093120B /* GeneralSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBAC182818A8930093120B /* GeneralSearchTests.swift */; };
 		C0DBAC232818A8930093120B /* GeneralSearchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBAC222818A8930093120B /* GeneralSearchUITests.swift */; };
 		C0DBAC252818A8930093120B /* GeneralSearchUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBAC242818A8930093120B /* GeneralSearchUITestsLaunchTests.swift */; };
+		C0DBAC352818AA9A0093120B /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBAC342818AA9A0093120B /* Request.swift */; };
+		C0DBAC372818AAAE0093120B /* iTunesURLSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBAC362818AAAE0093120B /* iTunesURLSupport.swift */; };
+		C0DBAC392818AB860093120B /* SearchDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0DBAC382818AB860093120B /* SearchDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		C0DBAC1E2818A8930093120B /* GeneralSearchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeneralSearchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0DBAC222818A8930093120B /* GeneralSearchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSearchUITests.swift; sourceTree = "<group>"; };
 		C0DBAC242818A8930093120B /* GeneralSearchUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSearchUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C0DBAC342818AA9A0093120B /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		C0DBAC362818AAAE0093120B /* iTunesURLSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesURLSupport.swift; sourceTree = "<group>"; };
+		C0DBAC382818AB860093120B /* SearchDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,10 +104,12 @@
 		C0DBAC012818A8920093120B /* GeneralSearch */ = {
 			isa = PBXGroup;
 			children = (
+				C0DBAC332818A9900093120B /* Support */,
+				C0DBAC322818A9750093120B /* Model */,
+				C0DBAC312818A96B0093120B /* Views */,
 				C0DBAC022818A8920093120B /* GeneralSearchApp.swift */,
 				C0DBAC042818A8920093120B /* ContentView.swift */,
 				C0DBAC062818A8920093120B /* Assets.xcassets */,
-				C0DBAC0B2818A8920093120B /* Persistence.swift */,
 				C0DBAC0D2818A8920093120B /* GeneralSearch.xcdatamodeld */,
 				C0DBAC082818A8920093120B /* Preview Content */,
 			);
@@ -131,6 +139,31 @@
 				C0DBAC242818A8930093120B /* GeneralSearchUITestsLaunchTests.swift */,
 			);
 			path = GeneralSearchUITests;
+			sourceTree = "<group>";
+		};
+		C0DBAC312818A96B0093120B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C0DBAC322818A9750093120B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C0DBAC342818AA9A0093120B /* Request.swift */,
+				C0DBAC0B2818A8920093120B /* Persistence.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C0DBAC332818A9900093120B /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				C0DBAC362818AAAE0093120B /* iTunesURLSupport.swift */,
+				C0DBAC382818AB860093120B /* SearchDetails.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0DBAC392818AB860093120B /* SearchDetails.swift in Sources */,
 				C0DBAC0C2818A8920093120B /* Persistence.swift in Sources */,
 				C0DBAC052818A8920093120B /* ContentView.swift in Sources */,
+				C0DBAC352818AA9A0093120B /* Request.swift in Sources */,
+				C0DBAC372818AAAE0093120B /* iTunesURLSupport.swift in Sources */,
 				C0DBAC0F2818A8920093120B /* GeneralSearch.xcdatamodeld in Sources */,
 				C0DBAC032818A8920093120B /* GeneralSearchApp.swift in Sources */,
 			);
