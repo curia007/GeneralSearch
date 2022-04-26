@@ -9,6 +9,9 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    @StateObject private var request = Request()
+    @State private var searchTerm = ""
+
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -16,6 +19,28 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
 
+    var body: some View {
+      VStack {
+        TextField("Enter Search Term",
+                  text: $searchTerm)
+          .multilineTextAlignment(.center)
+          .textFieldStyle(RoundedBorderTextFieldStyle())
+          
+        List(request.results) {result in
+          HStack {
+            request.images[result.name].map(Image.init(uiImage:))
+            GeneralSearchDetailsView(generalDetails: result)
+          }
+        }
+        
+      }
+      .onChange(of: searchTerm){ newSearchTerm in
+        request.searchTerm = newSearchTerm
+      }
+    }
+  }
+
+    /*
     var body: some View {
         NavigationView {
             List {
@@ -41,7 +66,9 @@ struct ContentView: View {
             Text("Select an item")
         }
     }
-
+*/
+  
+/*
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
@@ -73,6 +100,7 @@ struct ContentView: View {
         }
     }
 }
+*/
 
 private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
@@ -83,6 +111,9 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        ContentView()
+        /*
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+         */
     }
 }
